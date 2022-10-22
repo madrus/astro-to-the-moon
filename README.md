@@ -59,6 +59,39 @@ shamefully-hoist=true
 
 `Astro` calls `integrations` what most other componies call `plugins`.
 
+Add Github `gh` CLI:
+
+```bash
+brew install gh
+gh auth login
+# make the initial commit and then create and add the remote
+gh repo create
+```
+
+Add Netlify CLI:
+
+```bash
+pnpm i -g netlify-cli
+netlify --version
+```
+
+Now open the `~/.zshrc` with `nano` and add the `ntl` alias
+
+```bash
+alias ntl='netlify'
+```
+
+Authorize with Github and create a new Netlify website:
+
+```bash
+ntl login # if expired run "ntl logout" first
+ntl init # follow the dialog
+git push
+ntl open
+```
+
+
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
