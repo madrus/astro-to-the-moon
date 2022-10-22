@@ -48,7 +48,10 @@ All commands are run from the root of the project, from a terminal:
 
 I have followed the [Ben Holmes](https://twitter.com/BHolmesDev) and [whitep4nth3r](https://www.youtube.com/c/whitep4nth3r) session on Astro on her [Youtube channel](https://www.youtube.com/watch?v=A3HDN_dPq7k).
 
+
 __Tip: __ find nice projects on [astro.new](https://astro.new).
+
+### Tip for PNPM users
 
 Add `.npmrc` if using `pnpm` with the following content:
 
@@ -56,6 +59,8 @@ Add `.npmrc` if using `pnpm` with the following content:
 // expose Astro dependencies for 'pnpm' users
 shamefully-hoist=true
 ```
+
+### Add Github GH CLI
 
 `Astro` calls `integrations` what most other componies call `plugins`.
 
@@ -68,7 +73,9 @@ gh auth login
 gh repo create
 ```
 
-Add Netlify CLI:
+### Add Netlify CLI with an Alias
+
+First, install Netlify CLI:
 
 ```bash
 pnpm i -g netlify-cli
@@ -90,7 +97,23 @@ git push
 ntl open
 ```
 
+### Fetching Remote Data
 
+Next step, let us try and fetch some Markdown file from Github and show it on the page. We create a `src/components/Readme.astro` file and add this code:
+
+```tsx
+---
+import { marked } from 'marked'
+const response = await fetch('https://raw.githubusercontent.com/madrus/mdocs/master/README.md')
+const markdown = await response.text()
+const content = marked.parse(markdown)
+---
+<section set:html={content}></section>
+```
+
+Several notes:
+1. we have to add `marked` as a dependency and `@types/marked` as a devDependency for this to work
+2. as `marked.parse()` generates HTML, we need to add it via `set:html={}` attribute
 
 ## 👀 Want to learn more?
 
