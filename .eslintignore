@@ -1,0 +1,11 @@
+*.local
+.DS_Store
+build
+coverage
+cypress
+dist
+instrumented
+node_modules
+node_modules/*
+**/client*.ts
+**/Client*.ts
