@@ -46,8 +46,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## Project Notes
 
-I have followed the [Ben Holmes](https://twitter.com/BHolmesDev) and [whitep4nth3r](https://www.youtube.com/c/whitep4nth3r) session on Astro on her [Youtube channel](https://www.youtube.com/watch?v=A3HDN_dPq7k).
-
+I have followed the [Ben Holmes](https://twitter.com/BHolmesDev) and [whitep4nth3r](https://www.youtube.com/c/whitep4nth3r) session on Astro on her [Youtube channel](https://www.youtube.com/watch?v=A3HDN_dPq7k). And here is the [Github repo](https://github.com/whitep4nth3r/whitep4nth3r-links) of the project used in this video.
 
 __Tip: __ find nice projects on [astro.new](https://astro.new).
 
@@ -114,6 +113,12 @@ const content = marked.parse(markdown)
 Several notes:
 1. we have to add `marked` as a dependency and `@types/marked` as a devDependency for this to work
 2. as `marked.parse()` generates HTML, we need to add it via `set:html={}` attribute
+
+### Add React
+
+```bash
+pnpx astro add react
+```
 
 ## 👀 Want to learn more?
 

@@ -11,8 +11,13 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/react": "^1.2.1",
+		"@astrojs/sitemap": "^1.0.0",
+		"@astrojs/solid-js": "^1.2.1",
+		"@astrojs/turbolinks": "^0.1.4",
 		"astro": "^1.5.2",
-		"marked": "^4.1.1"
+		"marked": "^4.1.1",
+		"solid-js": "^1.4.3"
 	},
 	"devDependencies": {
 		"@madrus/configs": "^0.1.18",
