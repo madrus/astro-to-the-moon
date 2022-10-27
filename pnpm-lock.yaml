@@ -6,9 +6,11 @@ specifiers:
   '@astrojs/solid-js': ^1.2.1
   '@astrojs/turbolinks': ^0.1.4
   '@madrus/configs': ^0.1.18
+  '@nanostores/solid': ^0.3.0
   '@types/marked': ^4.0.7
   astro: ^1.5.2
   marked: ^4.1.1
+  nanostores: ^0.7.0
   solid-js: ^1.4.3
 
 dependencies:
@@ -16,8 +18,10 @@ dependencies:
   '@astrojs/sitemap': 1.0.0
   '@astrojs/solid-js': 1.2.1_halbqdcynamd2xnv2lolknuczy
   '@astrojs/turbolinks': 0.1.4
+  '@nanostores/solid': 0.3.0_hhvuo4sxdey2u4oqlb6td5bhni
   astro: 1.5.2
   marked: 4.1.1
+  nanostores: 0.7.0
   solid-js: 1.6.0
 
 devDependencies:
@@ -581,6 +585,16 @@ packages:
       stylelint-config-prettier: 9.0.3_stylelint@14.14.0
       stylelint-config-standard: 28.0.0_stylelint@14.14.0
     dev: true
+
+  /@nanostores/solid/0.3.0_hhvuo4sxdey2u4oqlb6td5bhni:
+    resolution: {integrity: sha512-OE5oKS42lJ+ahHjINgRxI/1Jl76VQy6i8fvAfdYE4UySMFXMEB69Qh8e4L7TObRzxIVl2PeoMacHM10PydBV9w==}
+    peerDependencies:
+      nanostores: ^0.7.0
+      solid-js: '>=1.4.0'
+    dependencies:
+      nanostores: 0.7.0
+      solid-js: 1.6.0
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3902,6 +3916,11 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /nanostores/0.7.0:
+    resolution: {integrity: sha512-y+ma9MVXuPzXKEXaRYW/iL/xG/HtMwB8fmFcMfUqt5fCNR/na2kDubbZGV4furUMTgmxfySJs0cQjORWhaPDyA==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+    dev: false
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}

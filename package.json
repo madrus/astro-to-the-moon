@@ -15,8 +15,10 @@
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/solid-js": "^1.2.1",
 		"@astrojs/turbolinks": "^0.1.4",
+		"@nanostores/solid": "^0.3.0",
 		"astro": "^1.5.2",
 		"marked": "^4.1.1",
+		"nanostores": "^0.7.0",
 		"solid-js": "^1.4.3"
 	},
 	"devDependencies": {
