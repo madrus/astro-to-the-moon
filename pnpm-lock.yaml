@@ -4,7 +4,6 @@ specifiers:
   '@astrojs/react': ^1.2.1
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/solid-js': ^1.2.1
-  '@astrojs/turbolinks': ^0.1.4
   '@madrus/configs': ^0.1.18
   '@nanostores/solid': ^0.3.0
   '@types/marked': ^4.0.7
@@ -17,7 +16,6 @@ dependencies:
   '@astrojs/react': 1.2.1_5uumaiclxbdbzaqafclbf6maf4
   '@astrojs/sitemap': 1.0.0
   '@astrojs/solid-js': 1.2.1_halbqdcynamd2xnv2lolknuczy
-  '@astrojs/turbolinks': 0.1.4
   '@nanostores/solid': 0.3.0_hhvuo4sxdey2u4oqlb6td5bhni
   astro: 1.5.2
   marked: 4.1.1
@@ -168,13 +166,6 @@ packages:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@astrojs/turbolinks/0.1.4:
-    resolution: {integrity: sha512-p6CBacV+wHGtRlfRJ1kSu+mxHm5sFe3oN71WQ3kkDEU00x6KwWC7C+Ok3NLI7EZXHdBs4SglXJdZeY7vLfmk+g==}
-    deprecated: This integration is no longer maintained.
-    dependencies:
-      turbolinks: 5.2.0
     dev: false
 
   /@astrojs/webapi/1.1.0:
@@ -5140,10 +5131,6 @@ packages:
       tslib: 1.14.1
       typescript: 4.8.4
     dev: true
-
-  /turbolinks/5.2.0:
-    resolution: {integrity: sha512-pMiez3tyBo6uRHFNNZoYMmrES/IaGgMhQQM+VFF36keryjb5ms0XkVpmKHkfW/4Vy96qiGW3K9bz0tF5sK9bBw==}
-    dev: false
 
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}

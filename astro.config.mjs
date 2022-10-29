@@ -4,9 +4,6 @@ import { defineConfig } from 'astro/config'
 import solidJs from '@astrojs/solid-js'
 
 // https://astro.build/config
-import turbolinks from '@astrojs/turbolinks'
-
-// https://astro.build/config
 import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
@@ -19,5 +16,5 @@ export default defineConfig({
   experimental: {
     integrations: true,
   },
-  integrations: [solidJs(), turbolinks(), sitemap()],
+  integrations: [solidJs(), sitemap()],
 })

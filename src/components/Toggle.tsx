@@ -1,30 +1,50 @@
-import { createEffect, JSXElement } from 'solid-js'
-import type { Show } from './showSignal'
-import { showSignal } from './showSignal'
+import type { JSXElement } from 'solid-js'
+import { useStore } from '@nanostores/solid'
+
+import { store } from '../stores/nanoStores'
+import type { Show } from '../stores/nanoStores'
 import './Toggle.css'
 
-export default function Toggle(props: {
-  show: Show
+type ToggleProps = {
+  showParam: Show
   children: any
-}): JSXElement {
-  const [show, setShow] = showSignal
+}
 
-  let showChildren = props.show === show()
+export const Toggle = ({ showParam, children }: ToggleProps): JSXElement => {
+  const what2show = useStore(store)
 
-  createEffect(() => (showChildren = props.show === show()))
+  const toggleShowInState = () => {
+    switch (what2show()) {
+      case 'cards':
+        store.set('readme')
+        break
+      case 'readme':
+        store.set('cards')
+        break
+    }
+  }
+
+  console.log('showParam:', showParam)
+  console.log('what2show:', what2show())
+
+  const doShowsMatch = () => showParam === what2show()
+
+  console.log('doShowsMatch:', doShowsMatch())
 
   return (
     <>
-      {props.show === show() && (
-        <button
-          onClick={() => {
-            setShow(props.show === 'cards' ? 'readme' : 'cards')
-          }}
-        >
-          {show() ? 'Show GitHub README' : 'Show link cards'}
-        </button>
-      )}
-      {showChildren && props.children}
+      {doShowsMatch() ? (
+        <>
+          <button
+            onClick={() => {
+              toggleShowInState()
+            }}
+          >
+            {what2show() === 'cards' ? 'Show GitHub README' : 'Show link cards'}
+          </button>
+          {showParam === what2show() ? <>{children}</> : null}
+        </>
+      ) : null}
     </>
   )
 }

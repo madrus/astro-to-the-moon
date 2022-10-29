@@ -1,15 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
-import Readme from '../components/Readme.astro'
-import Toggle from '../components/Toggle'
+import Markdown from '../components/Markdown.astro'
+import { Toggle } from '../components/Toggle'
 import '../styles/global.css'
 ---
 
-<Layout title='Madrus4U.links is a website to demo a combi of Astro and Svelte'>
+<Layout title='Madrus4U.links is a website to demo a combi of Astro and Solid'>
   <main>
     <h1><span class='text-gradient'>Madrus4U.links</span></h1>
-    <Toggle client:idle show='cards'>
+    <Toggle client:idle showParam='cards'>
       <ul role='list' class='link__card-grid'>
         <Card
           href='https://github.com/madrus'
@@ -33,8 +33,8 @@ import '../styles/global.css'
         />
       </ul>
     </Toggle>
-    <Toggle client:idle show='readme'>
-      <Readme />
+    <Toggle client:idle showParam='readme'>
+      <Markdown />
     </Toggle>
     <a href='/test'>Go to Test</a>
   </main>
