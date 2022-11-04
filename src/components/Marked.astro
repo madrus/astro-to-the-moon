@@ -1,15 +1,14 @@
 ---
-import { Markdown } from 'astro-remote'
+import { marked } from 'marked'
 
 const response = await fetch(
   'https://raw.githubusercontent.com/madrus/mdocs/master/README.md'
 )
 const markdown = await response.text()
+const content = marked.parse(markdown)
 ---
 
-<Markdown>
-  {markdown}
-</Markdown>
+<section set:html={content}></section>
 
 <style>
   img {

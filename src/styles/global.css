@@ -1,11 +1,66 @@
-/* #af43ff is an official Astro color!!! */
 :root {
-  --astro-gradient: linear-gradient(0deg, #a78bfa, #1e1a2e);
+  /* Colors */
+  --c-astro: #af43ff; /* #af43ff is an official Astro color!!! */
+  --c-astro-light: #a78bfa;
+  --c-black: #1e1a2e;
+  --c-blue: #46b4ff;
+  --c-gray: #90aab7;
+  --c-green: #9ef2cb;
+  --c-pink: #ffb8d9;
+  --c-orange: #ffb626;
+  --c-yellow: #ffdace;
+  --c-white: #fff;
+  --c-bg: hsl(10, 21%, 95%);
+  --c-border: hsl(17, 24%, 90%);
+  /* Fonts */
+  --f-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --f-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+  --f-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  /* Text */
+  --t-subdue: var(--c-astro);
+  --t-active: var(--c-blue);
+  /* Gradient */
+  --c-astro-gradient: linear-gradient(
+    0deg,
+    var(--c-astro-light),
+    var(--c-black)
+  );
 }
-h1 {
+html {
+  font-family: system-ui, sans-serif;
+  font-size: var(--f-size-base);
+  color: var(--c-black);
+  background-color: var(--c-bg);
+}
+body {
+  margin: 0;
+  font-family: 'Inter', 'system-ui', sans-serif;
+}
+* {
+  box-sizing: content-box;
+}
+:global(a) {
+  color: var(--c-black);
+}
+:global(a):focus {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--c-white) 0 0 0 0.125rem, var(--c-orange) 0 0 0 0.375rem;
+  transition: box-shadow 0.2s ease-in-out;
+  border-radius: 0.25rem;
+}
+:global(h1) {
+  font-size: var(--f-size-xl);
   margin: 2rem 0;
 }
-p {
+:global(h2) {
+  font-size: var(--f-size-lg);
+}
+:global(code) {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+:global(p) {
   font-size: 1.2rem;
 }
 main {
@@ -15,7 +70,7 @@ main {
 }
 .text-gradient {
   font-weight: 900;
-  background-image: var(--astro-gradient);
+  background-image: var(--c-astro-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -2,11 +2,19 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 import solidJs from '@astrojs/solid-js'
-
-// https://astro.build/config
 import sitemap from '@astrojs/sitemap'
+import svelte from '@astrojs/svelte'
+// import netlify from '@astrojs/netlify'
 
-// https://astro.build/config
+/**
+ * you can use netlify dev to run serverless functions in netlify/functions
+ * and not affect the generation of the Astro site
+ *
+ * however
+ *
+ * if you add the netlify adapter - everything becomes a SSR route
+ */
+
 export default defineConfig({
   site: 'https://localhost:3000',
   // Important!
@@ -16,5 +24,6 @@ export default defineConfig({
   experimental: {
     integrations: true,
   },
-  integrations: [solidJs(), sitemap()],
+  integrations: [solidJs(), sitemap(), svelte()],
+  // adapter: netlify(),
 })

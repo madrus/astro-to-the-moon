@@ -14,13 +14,17 @@
 		"@astrojs/react": "^1.2.1",
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/solid-js": "^1.2.1",
+		"@astrojs/svelte": "^1.0.2",
 		"@nanostores/solid": "^0.3.0",
 		"astro": "^1.5.2",
+		"astro-remote": "^0.2.3",
 		"marked": "^4.1.1",
 		"nanostores": "^0.7.0",
-		"solid-js": "^1.4.3"
+		"solid-js": "^1.4.3",
+		"svelte": "^3.46.4"
 	},
 	"devDependencies": {
+		"@astrojs/netlify": "^1.2.0",
 		"@madrus/configs": "^0.1.18",
 		"@types/marked": "^4.0.7"
 	}
