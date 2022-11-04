@@ -1,25 +1,45 @@
-import { JSXElement } from 'solid-js'
-import { Show, showSignal } from './showSignal'
+import type { JSXElement } from 'solid-js'
+import { useStore } from '@nanostores/solid'
+
+import { store } from '../stores/nanoStores'
+
+import type { Show } from '../stores/nanoStores'
+
 import './Toggle.css'
 
-export default function Toggle(props: {
-  show: Show
+type ToggleProps = {
+  showParam: Show
   children: any
-}): JSXElement {
-  const [show, setShow] = showSignal
+}
+
+export const Toggle = ({ showParam, children }: ToggleProps): JSXElement => {
+  const what2show = useStore(store)
+
+  const toggleShowInState = () => {
+    switch (what2show()) {
+      case 'cards':
+        store.set('marked')
+        break
+      case 'marked':
+        store.set('cards')
+        break
+    }
+  }
+
+  const doShowsMatch = () => showParam === what2show()
 
   return (
     <>
-      {props.show === show() ? (
+      {doShowsMatch() ? (
         <>
           <button
             onClick={() => {
-              setShow(show() === 'cards' ? 'readme' : 'cards')
+              toggleShowInState()
             }}
           >
-            {show() ? 'Show GitHub README' : 'Show link cards'}
+            {what2show() === 'cards' ? 'Show GitHub README' : 'Show link cards'}
           </button>
-          {props.children}
+          {showParam === what2show() ? <>{children}</> : null}
         </>
       ) : null}
     </>
